@@ -3,6 +3,7 @@ import { useParams, useHistory, useRouteMatch } from "react-router-dom";
 import usePokemonFetcher from "../hooks/usePokemonFetcher";
 import PokemonLoading from "../components/molecules/PokemonLoading";
 import PokemonPicture from "../components/atoms/PokemonPicture";
+import ButtonAv from "../components/atoms/ButtonAv";
 
 function Pokemon() {
   const { pokemonName, versusName } = useParams();
@@ -15,12 +16,9 @@ function Pokemon() {
   );
   return (
     <div className="flex flex-col w-3/4 mx-auto my-12 items-center">
-      <button
-        className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow mb-4"
-        onClick={() => history.goBack()}
-      >
+      <ButtonAv onClicked={() => history.goBack()}>
         &#60; Choose another one
-      </button>
+      </ButtonAv>
       {isLoading ? (
         <PokemonLoading
           cancel={() => dispatch({ type: "CANCEL" })}
@@ -41,21 +39,21 @@ function Pokemon() {
             </div>
           </div>
           {isChooseEnemyPage ? (
-            <button
-              className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow mb-4"
-              onClick={() =>
+            <ButtonAv
+              isPrimary
+              onClicked={() =>
                 history.push(`/${pokemonName}/vs/${versusName}/battle`)
               }
             >
               Battle with {pokemonName}
-            </button>
+            </ButtonAv>
           ) : (
-            <button
-              className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow mb-4"
-              onClick={() => history.push(`/${pokemonName}/vs`)}
+            <ButtonAv
+              isPrimary
+              onClicked={() => history.push(`/${pokemonName}/vs`)}
             >
               Select
-            </button>
+            </ButtonAv>
           )}
         </Fragment>
       )}

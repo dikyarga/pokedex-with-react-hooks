@@ -22,6 +22,7 @@ const pokemonReducer = (state, event) => {
         error: event.error
       };
     case "CANCEL":
+      console.log("CANCELLLLLL");
       return {
         ...state,
         status: "idle"
@@ -53,14 +54,16 @@ const usePokemonsFetcher = () => {
       fetchPokemons({ offset, limit })
         .then(({ results: pokemons }) => {
           if (canceled) return;
-          dispatch({
-            type: "RESOLVE",
-            pokemons,
-            pagination: {
-              limit: limit,
-              page: page + 1
-            }
-          });
+          setTimeout(() => {
+            dispatch({
+              type: "RESOLVE",
+              pokemons,
+              pagination: {
+                limit: limit,
+                page: page + 1
+              }
+            });
+          }, 2000);
         })
         .catch(error => {
           console.log({

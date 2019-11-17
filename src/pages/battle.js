@@ -38,7 +38,7 @@ function Battle() {
       {firstLoading ? "loading 1" : firstPokemon.name}
       {secondLoading ? "loading 2" : secondPokemon.name}
       <br />
-      {winner !== null ? `${winner.name}` : "loading"}
+      {winner !== null ? `${winner.name}` : "fighting"}
     </Fragment>
   );
 }
