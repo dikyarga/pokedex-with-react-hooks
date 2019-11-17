@@ -17,7 +17,17 @@ function Pokemon() {
       ) : (
         <Fragment>
           <PokemonPicture name={pokemon.name} id={pokemon.id} />
-          <h1 className="text-4xl">{pokemon.name}</h1>
+          <h1 className="text-4xl mb-4">{pokemon.name}</h1>
+          <div class="flex w-full">
+            <div class="flex-1 text-center px-4 py-2 m-2">
+              <h3 className="text-l text-gray-700">Height</h3>
+              <h2 className="text-2xl">{pokemon.height} inch</h2>
+            </div>
+            <div class="flex-1 text-center px-4 py-2 m-2">
+              <h3 className="text-l text-gray-700">Weight</h3>
+              <h2 className="text-2xl">{pokemon.weight} ons</h2>
+            </div>
+          </div>
         </Fragment>
       )}
     </div>

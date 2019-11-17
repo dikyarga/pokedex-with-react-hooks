@@ -11,7 +11,7 @@ function Homepage() {
   return (
     <div className="flex flex-col w-3/4 mx-auto my-12 items-center">
       <h1 className="text-4xl">Pokedex</h1>
-      <h2 className="text-xl">Choose your pokemon</h2>
+      <h2 className="text-xl mb-4">Choose your pokemon</h2>
       <br />
       {pokemons.map((pokemon, index) => (
         <PokemonListItem key={index} index={index} pokemon={pokemon} />
