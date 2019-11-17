@@ -9,6 +9,7 @@ const useInfiniteScroll = callback => {
         document.documentElement.offsetHeight - 50 // 50 is just number of pixel, so you dont need to scroll until reach the bottom
       ) {
         callback();
+        window.scrollTo(0, document.body.scrollHeight);
       }
     }
     window.addEventListener("scroll", debounce(handleScroll, 100));

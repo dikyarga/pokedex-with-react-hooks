@@ -5,12 +5,16 @@ import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import "./styles.css";
 import Homepage from "./pages/index";
 import Pokemon from "./pages/pokemon";
+import Battle from "./pages/battle";
 import * as serviceWorker from "./serviceWorker";
 
 const routing = (
   <Router>
     <Switch>
       <Route exact path="/" component={Homepage} />
+      <Route path="/:pokemonName/vs/:versusName/battle" component={Battle} />
+      <Route path="/:pokemonName/vs/:versusName" component={Pokemon} />
+      <Route path="/:pokemonName/vs" component={Homepage} />
       <Route path="/:pokemonName" component={Pokemon} />
     </Switch>
   </Router>
