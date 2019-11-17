@@ -2,6 +2,7 @@ import React from "react";
 import usePokemonsFetcher from "../hooks/usePokemonsFetcher";
 import useInfiniteScroll from "../hooks/useInfiniteScroll";
 import PokemonListItem from "../components/molecules/PokemonListItem";
+import PokemonLoading from "../components/molecules/PokemonLoading";
 
 function Homepage() {
   const { isLoading, pokemons, dispatch } = usePokemonsFetcher();
@@ -11,16 +12,14 @@ function Homepage() {
     <div className="App">
       <div className="flex flex-col w-3/4 mx-auto my-12 items-center">
         <h1 className="text-4xl">Pokedex</h1>
-        <h2>{isLoading ? "Fetching" : "Idle"}</h2>
-        <button onClick={() => dispatch({ type: "CANCEL" })}>Cancel</button>
+        <h2 className="text-xl">Choose your pokemon</h2>
         <br />
         {pokemons.map((pokemon, index) => (
           <PokemonListItem key={index} index={index} pokemon={pokemon} />
         ))}
-        {isLoading ? <h3>Fetch more pokemons</h3> : null}
-        <button onClick={() => dispatch({ type: "FETCH" })}>
-          Load more pokemenon
-        </button>
+        {isLoading ? (
+          <PokemonLoading cancel={() => dispatch({ type: "CANCEL" })} />
+        ) : null}
       </div>
     </div>
   );
