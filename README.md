@@ -1,3 +1,11 @@
+## Re-learn React with Hooks
+
+#### Highlights
+- Using state machine like (inspired from https://dev.to/davidkpiano/no-disabling-a-button-is-not-app-logic-598i)
+- Infinite Scroll
+- TailwindCSS 
+- PurgeCSS
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
