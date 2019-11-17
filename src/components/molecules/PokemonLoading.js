@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-
 import Pikachu from "../Pikachu";
 
 function PokemonLoading({ cancel, displayText = "Summoning my friends" }) {
