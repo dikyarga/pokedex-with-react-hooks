@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import usePokemonsFetcher from "../hooks/usePokemonsFetcher";
+import useInfiniteScroll from "../hooks/useInfiniteScroll";
 
 const Pokemon = ({ pokemon }) => (
   <Fragment>
@@ -13,6 +14,7 @@ const Pokemon = ({ pokemon }) => (
 
 function Homepage() {
   const { error, status, isLoading, pokemons, dispatch } = usePokemonsFetcher();
+  useInfiniteScroll(() => dispatch({ type: "FETCH" }));
 
   return (
     <div className="App">

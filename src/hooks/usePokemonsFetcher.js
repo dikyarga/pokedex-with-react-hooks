@@ -36,7 +36,7 @@ const initialState = {
   status: "idle",
   error: null,
   pagination: {
-    limit: 20,
+    limit: 30,
     page: 1
   }
 };
