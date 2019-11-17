@@ -1,16 +1,7 @@
 import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
 import usePokemonsFetcher from "../hooks/usePokemonsFetcher";
 import useInfiniteScroll from "../hooks/useInfiniteScroll";
-
-const Pokemon = ({ pokemon }) => (
-  <Fragment>
-    <Link className="Pokemon-list--item" to={pokemon.name}>
-      {pokemon.name}
-    </Link>
-    <br />
-  </Fragment>
-);
+import PokemonListItem from "../components/molecules/PokemonListItem";
 
 function Homepage() {
   const { error, status, isLoading, pokemons, dispatch } = usePokemonsFetcher();
@@ -26,7 +17,7 @@ function Homepage() {
       <button onClick={() => dispatch({ type: "CANCEL" })}>Cancel</button>
       <br />
       {pokemons.map((pokemon, index) => (
-        <Pokemon key={index} index={index} pokemon={pokemon} />
+        <PokemonListItem key={index} index={index} pokemon={pokemon} />
       ))}
       {isLoading ? <h3>Fetch more pokemons</h3> : null}
       <button onClick={() => dispatch({ type: "FETCH" })}>
