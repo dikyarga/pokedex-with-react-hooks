@@ -53,16 +53,14 @@ const usePokemonsFetcher = () => {
       fetchPokemons({ offset, limit })
         .then(({ results: pokemons }) => {
           if (canceled) return;
-          setTimeout(() => {
-            dispatch({
-              type: "RESOLVE",
-              pokemons,
-              pagination: {
-                limit: limit,
-                page: page + 1
-              }
-            });
-          }, 2000);
+          dispatch({
+            type: "RESOLVE",
+            pokemons,
+            pagination: {
+              limit: limit,
+              page: page + 1
+            }
+          });
         })
         .catch(error => {
           console.log({
