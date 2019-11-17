@@ -3,12 +3,14 @@ import ReactDOM from "react-dom";
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 import Homepage from "./pages/index";
+import Pokemon from "./pages/pokemon";
 import * as serviceWorker from "./serviceWorker";
 
 const routing = (
   <Router>
     <Switch>
       <Route exact path="/" component={Homepage} />
+      <Route path="/:pokemonName" component={Pokemon} />
     </Switch>
   </Router>
 );
