@@ -18,6 +18,9 @@ function Homepage() {
 
   return (
     <div className="App">
+      <div className="flex flex-col w-3/4 mx-auto my-12 items-center">
+        <h1>Super cool page</h1>
+      </div>
       <h2>{isLoading ? "Fetching" : "Idle"}</h2>
       <h2>{status === "failure" ? error.message : "Idle"}</h2>
       <button onClick={() => dispatch({ type: "CANCEL" })}>Cancel</button>
