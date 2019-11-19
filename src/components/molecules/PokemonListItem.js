@@ -12,7 +12,7 @@ function PokemonListItem({ pokemon, index }) {
   return (
     <animated.div
       style={animation}
-      className="max-w w-full rounded overflow-hidden shadow-md m-2"
+      className="max-w w-full rounded overflow-hidden shadow-md m-2 qa-pokemon-list-item"
     >
       <div className="w-full flex items-center p-2">
         <PokemonPicture name={pokemon.name} id={index} />

@@ -7,6 +7,7 @@
 - [TailwindCSS](tailwindcss.com/)
 - [PurgeCSS](https://www.purgecss.com/)
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
+- End 2 end test with [Cypress](https://cypress.io/)
 - Animation with [React Spring](https://www.react-spring.io/)
 - [Github Action](https://github.com/features/actions) for automated test and deploy
 -- example generated deployment : https://github.com/dikyarga/pokedex-with-react-hooks/pull/1
@@ -32,6 +33,14 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `yarn test:e2e`
+
+Run Cypress test using interactive UI
+
+### `yarn test:e2e:ci`
+
+Run Cypress test CI
 
 ### `yarn build`
 
