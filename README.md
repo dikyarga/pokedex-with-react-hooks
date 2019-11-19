@@ -9,6 +9,7 @@
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 - Animation with [React Spring](https://www.react-spring.io/)
 - [Github Action](https://github.com/features/actions) for automated test and deploy
+-- example generated deployment : https://github.com/dikyarga/pokedex-with-react-hooks/pull/1
 
 Credits :
 - Uwu running Pikachu animation by https://github.com/gautamkrishnan91/CSSPikachu/
