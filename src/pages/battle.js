@@ -4,10 +4,7 @@ import { useParams, useHistory } from "react-router-dom";
 import PokemonPicture from "components/atoms/PokemonPicture";
 import ButtonAv from "components/atoms/ButtonAv";
 import usePokemonFetcher from "hooks/usePokemonFetcher";
-
-function countTotalPoint(points) {
-  return points.reduce((acc, current) => acc + current.base_stat, 0);
-}
+import { countTotalPoint } from "utils";
 
 function Battle() {
   let history = useHistory();
@@ -40,7 +37,7 @@ function Battle() {
         <div className="flex-1 text-center ">
           <h2 className="text-2xl ">{pokemonName}</h2>
           {isBothFetched ? (
-            <h2 className="text-2xl text-blue-500 font-black">
+            <h2 className="text-2xl text-yellow-500 font-black">
               {firstTotalPoint}
             </h2>
           ) : (
@@ -54,7 +51,7 @@ function Battle() {
         <div className="flex-1 text-center">
           <h2 className="text-2xl">{versusName}</h2>
           {isBothFetched ? (
-            <h2 className="text-2xl text-blue-500 font-black">
+            <h2 className="text-2xl text-yellow-500 font-black">
               {secondTotalPoint}
             </h2>
           ) : (

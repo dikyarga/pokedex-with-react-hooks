@@ -5,11 +5,8 @@ import { useRouteMatch, Link, useParams } from "react-router-dom";
 import { useInfiniteScroll, usePokemonsFetcher } from "hooks/";
 import PokemonListItem from "components/molecules/PokemonListItem";
 import PokemonLoading from "components/molecules/PokemonLoading";
+import { generateVersusLink } from "utils";
 import "./index.css";
-
-function generateVersusLink(firstPokemon, secondPokemon) {
-  return `/${firstPokemon}/vs/${secondPokemon}`;
-}
 
 function Homepage() {
   const { isLoading, pokemons, dispatch } = usePokemonsFetcher();
@@ -24,8 +21,8 @@ function Homepage() {
 
   return (
     <div className="flex flex-col w-3/4 mx-auto my-12 items-center">
-      <h1 className="text-4xl">Pokedex Battle</h1>
-      <h2 className="text-xl mb-4">{message}</h2>
+      <h1 className="text-4xl text-gray-700">Pokedex Battle</h1>
+      <h2 className="text-xl mb-4 text-blue-500">{message}</h2>
       <TransitionGroup className="pokemon-list">
         {pokemons.map((pokemon, index) => (
           <CSSTransition timeout={500} key={index} classNames="fade">
