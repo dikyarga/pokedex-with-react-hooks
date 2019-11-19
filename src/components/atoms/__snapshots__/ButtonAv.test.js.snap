@@ -3,7 +3,7 @@
 exports[`<ButtonAv /> should match snapshot 1`] = `
 <DocumentFragment>
   <button
-    class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow m-2"
+    class=" bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow m-2"
   >
     Text
   </button>
