@@ -74,6 +74,16 @@ function Battle() {
           <h2 className="text-3xl uppercase text-blue-500 font-black mb-4">
             {winner.name}
           </h2>
+          <h3 className="text-xl">It's mean</h3>
+          {winner === firstPokemon ? (
+            <h2 className="text-3xl uppercase text-green-500 font-black mb-4">
+              YOU WON!
+            </h2>
+          ) : (
+            <h2 className="text-3xl uppercase text-red-500 font-black mb-4">
+              YOU Lose!
+            </h2>
+          )}
           <ButtonAv onClicked={() => history.push("/")}>Play again!</ButtonAv>
         </Fragment>
       ) : (
