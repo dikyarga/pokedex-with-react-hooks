@@ -1,12 +1,10 @@
 import React from "react";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { useRouteMatch, Link, useParams } from "react-router-dom";
 
 import { useInfiniteScroll, usePokemonsFetcher } from "hooks/";
 import PokemonListItem from "components/molecules/PokemonListItem";
 import PokemonLoading from "components/molecules/PokemonLoading";
 import { generateVersusLink } from "utils";
-import "./index.css";
 
 function Homepage() {
   const { isLoading, pokemons, dispatch } = usePokemonsFetcher();
@@ -23,24 +21,23 @@ function Homepage() {
     <div className="flex flex-col w-3/4 mx-auto my-12 items-center">
       <h1 className="text-4xl text-gray-700">Pokedex Battle</h1>
       <h2 className="text-xl mb-4 text-blue-500">{message}</h2>
-      <TransitionGroup className="pokemon-list">
+      <div>
         {pokemons.map((pokemon, index) => (
-          <CSSTransition timeout={500} key={index} classNames="fade">
-            <Link
-              to={
-                isVersusPage
-                  ? generateVersusLink(pokemonName, pokemon.name)
-                  : pokemon.name
-              }
-            >
-              <PokemonListItem key={index} index={index} pokemon={pokemon} />
-            </Link>
-          </CSSTransition>
+          <Link
+            to={
+              isVersusPage
+                ? generateVersusLink(pokemonName, pokemon.name)
+                : pokemon.name
+            }
+            key={index}
+          >
+            <PokemonListItem index={index} pokemon={pokemon} />
+          </Link>
         ))}
-      </TransitionGroup>
-      {isLoading ? (
-        <PokemonLoading cancel={() => dispatch({ type: "CANCEL" })} />
-      ) : null}
+        {isLoading ? (
+          <PokemonLoading cancel={() => dispatch({ type: "CANCEL" })} />
+        ) : null}
+      </div>
     </div>
   );
 }

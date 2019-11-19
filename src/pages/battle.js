@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
+import { useSpring, animated } from "react-spring";
 
 import PokemonPicture from "components/atoms/PokemonPicture";
 import ButtonAv from "components/atoms/ButtonAv";
@@ -29,6 +30,9 @@ function Battle() {
       setWinner(theWinner);
     }
   }, [firstPokemon, isBothFetched, secondPokemon]);
+  const animation = useSpring({
+    opacity: isBothFetched ? 1 : 0
+  });
 
   return (
     <div className="flex flex-col w-3/4 mx-auto my-12 items-center">
@@ -63,7 +67,9 @@ function Battle() {
       <br />
       {winner !== null ? (
         <Fragment>
-          <h3 className="text-xl mb-2">The winner is</h3>
+          <animated.h3 style={animation} className="text-xl mb-2">
+            The winner is
+          </animated.h3>
           <PokemonPicture name={winner.name} id={winner.id} />
           <h2 className="text-3xl uppercase text-blue-500 font-black mb-4">
             {winner.name}

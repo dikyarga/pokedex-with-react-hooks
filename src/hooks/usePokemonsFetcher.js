@@ -22,7 +22,6 @@ const pokemonReducer = (state, event) => {
         error: event.error
       };
     case "CANCEL":
-      console.log("CANCELLLLLL");
       return {
         ...state,
         status: "idle"
