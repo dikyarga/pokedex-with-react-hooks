@@ -1,5 +1,5 @@
 import React from "react";
-import PokemonPicture from "../atoms/PokemonPicture";
+import PokemonPicture from "components/atoms/PokemonPicture";
 
 function PokemonListItem({ pokemon, index }) {
   return (

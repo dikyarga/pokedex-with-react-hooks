@@ -2,10 +2,9 @@ import React from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { useRouteMatch, Link, useParams } from "react-router-dom";
 
-import usePokemonsFetcher from "../hooks/usePokemonsFetcher";
-import useInfiniteScroll from "../hooks/useInfiniteScroll";
-import PokemonListItem from "../components/molecules/PokemonListItem";
-import PokemonLoading from "../components/molecules/PokemonLoading";
+import { useInfiniteScroll, usePokemonsFetcher } from "hooks/";
+import PokemonListItem from "components/molecules/PokemonListItem";
+import PokemonLoading from "components/molecules/PokemonLoading";
 import "./index.css";
 
 function generateVersusLink(firstPokemon, secondPokemon) {

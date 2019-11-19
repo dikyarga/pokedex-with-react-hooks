@@ -1,9 +1,9 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 
-import PokemonPicture from "../components/atoms/PokemonPicture";
-import ButtonAv from "../components/atoms/ButtonAv";
-import usePokemonFetcher from "../hooks/usePokemonFetcher";
+import PokemonPicture from "components/atoms/PokemonPicture";
+import ButtonAv from "components/atoms/ButtonAv";
+import usePokemonFetcher from "hooks/usePokemonFetcher";
 
 function countTotalPoint(points) {
   return points.reduce((acc, current) => acc + current.base_stat, 0);
@@ -25,12 +25,14 @@ function Battle() {
     if (isBothFetched) {
       const firstTotal = countTotalPoint(firstPokemon.stats);
       const secondTotal = countTotalPoint(secondPokemon.stats);
+      const theWinner = firstTotal > secondTotal ? firstPokemon : secondPokemon;
+
       setFirstTotalPoint(firstTotal);
       setSecondTotalPoint(secondTotal);
-      const theWinner = firstTotal > secondTotal ? firstPokemon : secondPokemon;
       setWinner(theWinner);
     }
-  }, [firstPokemon, firstPokemon.stats, isBothFetched, secondPokemon]);
+  }, [firstPokemon, isBothFetched, secondPokemon]);
+
   return (
     <div className="flex flex-col w-3/4 mx-auto my-12 items-center">
       <h1 className="text-3xl mb-8">The Pokemon Battle</h1>

@@ -1,5 +1,5 @@
 import { useEffect, useReducer } from "react";
-import { fetchPokemon } from "../apis";
+import { fetchPokemon } from "apis";
 const pokemonReducer = (state, event) => {
   switch (event.type) {
     case "FETCH":

@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
-import Pikachu from "../Pikachu";
-import ButtonAv from "../atoms/ButtonAv";
+import Pikachu from "components/Pikachu";
+import ButtonAv from "components/atoms/ButtonAv";
 
 function PokemonLoading({ cancel, displayText = "Summoning my friends" }) {
   return (
