@@ -43,6 +43,7 @@ function Pokemon() {
               onClicked={() =>
                 history.push(`/${pokemonName}/vs/${versusName}/battle`)
               }
+              className="qa-select"
             >
               Battle with {pokemonName}
             </ButtonAv>
@@ -50,11 +51,15 @@ function Pokemon() {
             <ButtonAv
               isPrimary
               onClicked={() => history.push(`/${pokemonName}/vs`)}
+              className="qa-select"
             >
               Select
             </ButtonAv>
           )}
-          <ButtonAv onClicked={() => history.goBack()}>
+          <ButtonAv
+            onClicked={() => history.goBack()}
+            className="qa-back-to-list"
+          >
             &#60; Choose another one
           </ButtonAv>
         </Fragment>
