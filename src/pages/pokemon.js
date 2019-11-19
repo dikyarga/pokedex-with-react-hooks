@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import { useParams, useHistory, useRouteMatch } from "react-router-dom";
-import { useSpring, animated, useTrail } from "react-spring";
 
 import usePokemonFetcher from "hooks/usePokemonFetcher";
 import PokemonLoading from "components/molecules/PokemonLoading";
@@ -16,9 +15,6 @@ function Pokemon() {
   const { isLoading, pokemon, dispatch } = usePokemonFetcher(
     currentPokemonName
   );
-  const animation = useSpring({
-    opacity: !isLoading ? 1 : 0
-  });
 
   return (
     <div className="flex flex-col w-3/4 mx-auto my-12 items-center">
@@ -30,9 +26,7 @@ function Pokemon() {
       ) : (
         <Fragment>
           <PokemonPicture name={pokemon.name} id={pokemon.id} />
-          <animated.h1 style={animation} className="text-4xl mb-2">
-            {pokemon.name}
-          </animated.h1>
+          <h1 className="text-4xl mb-2">{pokemon.name}</h1>
           <div className="flex w-full mb-2">
             <div className="flex-1 text-center px-4 py-2 m-2">
               <h3 className="text-l text-gray-700">Height</h3>
