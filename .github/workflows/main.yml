@@ -1,9 +1,6 @@
 name: PokedexAutomation
 
-on:
-  push:
-    branches: 
-      - master
+on: [push]
 
 jobs:
   test:
