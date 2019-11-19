@@ -6,6 +6,7 @@
 - Infinite scroll
 - [TailwindCSS](tailwindcss.com/)
 - [PurgeCSS](https://www.purgecss.com/)
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 
 Credits :
 - Uwu running Pikachu animation by https://github.com/gautamkrishnan91/CSSPikachu/

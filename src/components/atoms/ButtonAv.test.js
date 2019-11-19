@@ -1,7 +1,9 @@
 import React from "react";
-import { render, fireEvent } from "@testing-library/react";
+import { render, fireEvent, cleanup } from "@testing-library/react";
 
 import ButtonAv from "./ButtonAv";
+
+afterEach(cleanup);
 
 describe("<ButtonAv />", () => {
   const content = "content";
@@ -16,5 +18,9 @@ describe("<ButtonAv />", () => {
     fireEvent.click(counter);
 
     expect(onClicked).toHaveBeenCalled();
+  });
+  it("should match snapshot", () => {
+    const { asFragment } = render(<ButtonAv>Text</ButtonAv>);
+    expect(asFragment()).toMatchSnapshot();
   });
 });
